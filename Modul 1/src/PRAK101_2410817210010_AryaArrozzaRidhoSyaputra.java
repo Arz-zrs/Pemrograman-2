@@ -1,5 +1,3 @@
-package Modul_1;
-
 import java.util.Scanner;
 
 public class PRAK101_2410817210010_AryaArrozzaRidhoSyaputra {
