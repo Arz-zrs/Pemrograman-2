@@ -41,7 +41,6 @@ public class PRAK101_2410817210010_AryaArrozzaRidhoSyaputra {
             default -> "(BULAN TIDAK VALID)";
         };
 
-        System.out.println("Nama Lengkap " + fullName + ", Lahir di " + birthPlace + " pada Tanggal " + birthDate + " " + monthName + " " + birthYear);
-        System.out.print("Tinggi Badan " + height + " cm dan Berat Badan " + weight + " kilogram");
+        System.out.print("Nama Lengkap " + fullName + ", Lahir di " + birthPlace + " pada Tanggal " + birthDate + " " + monthName + " " + birthYear + " Tinggi Badan " + height + " cm dan Berat Badan " + weight + " kilogram");
     }
 }
