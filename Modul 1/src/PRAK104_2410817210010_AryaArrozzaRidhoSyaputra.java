@@ -19,7 +19,8 @@ public class PRAK104_2410817210010_AryaArrozzaRidhoSyaputra {
             if (a != b) {
                 if ((a == 'B' && b == 'G') || (a == 'G' && b == 'K') || (a == 'K' && b == 'B')) {
                     abuScore++;
-                } else {
+                }
+                else {
                     bagasScore++;
                 }
             }
