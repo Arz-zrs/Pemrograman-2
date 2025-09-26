@@ -5,10 +5,10 @@ public class PRAK104_2410817210010_AryaArrozzaRidhoSyaputra {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Tangan Abu: ");
-        String abu = sc.nextLine().replaceAll("\\s+", "").toUpperCase();
+        String abu = sc.nextLine().replaceAll(" ", "").toUpperCase();
 
         System.out.print("Tangan Bagas: ");
-        String bagas = sc.nextLine().replaceAll("\\s+", "").toUpperCase();
+        String bagas = sc.nextLine().replaceAll(" ", "").toUpperCase();
 
         int abuScore = 0;
         int bagasScore = 0;
