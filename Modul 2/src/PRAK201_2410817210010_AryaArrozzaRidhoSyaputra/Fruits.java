@@ -1,3 +1,5 @@
+package PRAK201_2410817210010_AryaArrozzaRidhoSyaputra;
+
 public class Fruits {
     private String name;
     private double weight;

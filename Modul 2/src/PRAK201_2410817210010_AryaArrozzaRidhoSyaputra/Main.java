@@ -1,3 +1,5 @@
+package PRAK201_2410817210010_AryaArrozzaRidhoSyaputra;
+
 public class Main {
     public static void main(String[] args) {
         Fruits apple = new Fruits();
