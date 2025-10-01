@@ -38,16 +38,16 @@ public class Fruits {
         this.quantity = quantity;
     }
 
-    public double amountPrice() {
+    public double getAmountPrice() {
         return this.price * this.quantity / this.weight;
     }
 
-    public double discountTotal() {
+    public double getDiscountTotal() {
         int discPerWeight = (int)(this.quantity/4);
         return discPerWeight * (4 * this.price) * 0.02;
     }
 
-    public double discountedPrice() {
-        return amountPrice() - discountTotal();
+    public double getDiscountedPrice() {
+        return getAmountPrice() - getDiscountTotal();
     }
 }
