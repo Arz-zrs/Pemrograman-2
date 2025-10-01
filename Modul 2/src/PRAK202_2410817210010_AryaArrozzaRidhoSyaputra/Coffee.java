@@ -45,6 +45,6 @@ public class Coffee {
     public void info() {
         System.out.println("Nama Kopi: " + getCoffeeName());
         System.out.println("Ukuran: " + getSize());
-        System.out.printf("Harga: %.1f", getPrice());
+        System.out.printf("Harga: %.1f\n", getPrice());
     }
 }
