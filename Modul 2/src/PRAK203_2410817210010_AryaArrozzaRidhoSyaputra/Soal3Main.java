@@ -7,6 +7,7 @@ public class Soal3Main {
         //p1.nama = "Roi"
         p1.nama = "Roi";
         p1.asal = "Kingdom of Orvel";
+        //nilai umur dicetak nol jika tidak ada pendefinisian nilai
         p1.umur = 17;
         //pemasukkan nilai di atas bukan merupakan best practice
         // karena nilai attribute dapat dimodifikasi secara sembarang
@@ -14,7 +15,8 @@ public class Soal3Main {
         System.out.println("Nama Pegawai: " + p1.getNama());
         System.out.println("Asal: " + p1.getAsal());
         System.out.println("Jabatan: " + p1.jabatan);
-        //nilai umur dicetak nol jika tidak ada pendefinisian nilai
-        System.out.println("Umur: " + p1.umur);
+        //tambah "tahun" utk penyesuaian output
+        //System.out.println("Umur: " + p1.umur);
+        System.out.println("Umur: " + p1.umur + " tahun");
     }
 }
