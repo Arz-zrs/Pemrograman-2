@@ -46,7 +46,6 @@ public class Main {
         }
         else {
             System.out.print("Input tidak valid");
-            System.exit(1);
         }
     }
 }
