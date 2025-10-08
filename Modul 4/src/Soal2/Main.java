@@ -44,5 +44,9 @@ public class Main {
             Dog dog = new Dog(petName, petRace, furColor, abilities);
             dog.display();
         }
+        else {
+            System.out.print("Input tidak valid");
+            System.exit(1);
+        }
     }
 }
