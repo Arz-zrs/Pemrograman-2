@@ -1,4 +1,4 @@
-package Soal1;
+package soal1;
 
 public class Pet {
     private String name;

@@ -1,4 +1,4 @@
-package Soal2;
+package soal2;
 
 public class Cat extends Pet {
     private String furColor;
