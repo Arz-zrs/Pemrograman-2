@@ -38,7 +38,7 @@ public class Main {
             String furColor = input.nextLine();
 
             System.out.print("Kemampuan: ");
-            String ability = input.nextLine();
+            String ability = input.nextLine().replaceAll(" ", "");
             String[] abilities = ability.split(",");
 
             Dog dog = new Dog(petName, petRace, furColor, abilities);
