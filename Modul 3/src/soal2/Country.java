@@ -1,6 +1,6 @@
 package soal2;
 
-import java.util.*;
+import java.util.HashMap;
 
 public class Country {
     private String countryName;
