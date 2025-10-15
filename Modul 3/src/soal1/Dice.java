@@ -19,7 +19,7 @@ public class Dice {
         int total = 0;
 
         for (int i = 0; i < rollAmount; i++) {
-            int rolledDice = rand.nextInt(6) + 1;
+            int rolledDice = rand.nextInt(max) + min;
             System.out.println("Dadu ke-" + (i + 1) + " bernilai " + rolledDice);
             total += rolledDice;
         }
