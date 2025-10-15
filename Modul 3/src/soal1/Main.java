@@ -7,16 +7,16 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int rollAmount = sc.nextInt();
 
-        LinkedList<Dice> list = new LinkedList<>();
+        LinkedList<Dice> diceList = new LinkedList<>();
         for (int i = 1; i <= rollAmount; i++) {
             Dice dice = new Dice();
             dice.randomizeNumber();
-            list.add(dice);
+            diceList.add(dice);
         }
 
         int total = 0;
-        for (int i = 0; i < list.size(); i++) {
-            int roll = list.get(i).getRolledDice();
+        for (int i = 0; i < diceList.size(); i++) {
+            int roll = diceList.get(i).getRolledDice();
             System.out.println("Dadu ke-" + (i + 1) + " bernilai " + roll);
             total += roll;
         }
