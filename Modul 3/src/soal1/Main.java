@@ -11,5 +11,6 @@ public class Main {
 
         dice.setRollAmount(input);
         dice.randomizeNumber();
+        sc.close();
     }
 }

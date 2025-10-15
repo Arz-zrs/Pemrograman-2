@@ -30,5 +30,6 @@ public class Main {
         for (Country country : countries) {
             country.getInfo();
         }
+        sc.close();
     }
 }
