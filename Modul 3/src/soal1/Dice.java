@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Dice {
     private int rollAmount;
-    private int min = 1;
     private int max = 6;
 
     public void setRollAmount(int rollAmount) {
@@ -19,7 +18,7 @@ public class Dice {
         int total = 0;
 
         for (int i = 0; i < rollAmount; i++) {
-            int rolledDice = rand.nextInt(max) + min;
+            int rolledDice = rand.nextInt(max) + 1;
             System.out.println("Dadu ke-" + (i + 1) + " bernilai " + rolledDice);
             total += rolledDice;
         }
