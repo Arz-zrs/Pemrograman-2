@@ -7,8 +7,8 @@ public class Main {
         Dice dice = new Dice();
 
         Scanner sc = new Scanner(System.in);
-
         int input = sc.nextInt();
+
         dice.setRollAmount(input);
         dice.randomizeNumber();
     }
