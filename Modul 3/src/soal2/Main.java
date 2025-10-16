@@ -19,8 +19,27 @@ public class Main {
                 countries.add(new Country(countryName, government, leaderName));
             }
             else {
-                int day = sc.nextInt();
-                int month = sc.nextInt();
+                int day;
+                do {
+                    while (!sc.hasNextInt()) {
+                        System.out.println("Invalid input, try again");
+                        sc.next();
+                    }
+                    day = sc.nextInt();
+                    if (day < 1 || day > 31) System.out.println("Invalid input, try again");
+                }
+                while (day < 1 || day > 31);
+
+                int month;
+                do {
+                    while (!sc.hasNextInt()) {
+                        System.out.println("Invalid input, try again");
+                        sc.next();
+                    }
+                    month = sc.nextInt();
+                    if (month < 1 || month > 12) System.out.println("Invalid input, try again");
+                }
+                while (month < 1 || month > 12);
                 int year = sc.nextInt();
                 sc.nextLine();
 

@@ -5,7 +5,16 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int rollAmount = sc.nextInt();
+        int rollAmount;
+        do {
+            while(!sc.hasNextInt()) {
+                System.out.println("Invalid input, try again");
+                sc.next();
+            }
+            rollAmount = sc.nextInt();
+            if (rollAmount < 1) System.out.println("Invalid input, try again");
+        }
+        while (rollAmount < 1);
 
         LinkedList<Dice> diceList = new LinkedList<>();
         for (int i = 1; i <= rollAmount; i++) {
