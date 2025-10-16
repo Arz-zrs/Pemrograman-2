@@ -55,7 +55,7 @@ public class Main {
                         if (deleteID.equals(cStudent.getID())) {
                             isIDFound = true;
                             studentList.remove(cStudent);
-                            System.out.println("Mahasiswa " + deleteID + " dihapus");
+                            System.out.println("Mahasiswa " + cStudent.getName() + " dihapus");
                             break;
                         }
                     }
