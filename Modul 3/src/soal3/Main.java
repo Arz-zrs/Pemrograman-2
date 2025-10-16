@@ -70,7 +70,7 @@ public class Main {
                     for (Students cStudent : studentList) {
                         if (searchID.equals(cStudent.getID())) {
                             hasIDfound = true;
-                            System.out.println("NIM: " + cStudent.getID() + ", Name: " + cStudent.getName());
+                            System.out.println("NIM: " + cStudent.getID() + ", Nama: " + cStudent.getName());
                             break;
                         }
                     }
@@ -80,7 +80,7 @@ public class Main {
                 case 4:
                     System.out.println("Daftar Mahasiswa:");
                     for (Students cStudent : studentList) {
-                        System.out.println("NIM: " + cStudent.getID() + ", Name: " + cStudent.getName());
+                        System.out.println("NIM: " + cStudent.getID() + ", Nama: " + cStudent.getName());
                     }
                     break;
 
