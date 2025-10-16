@@ -39,10 +39,10 @@ public class Main {
                         }
                     }
 
-                    if (duplicateExists) System.out.println("NIM sudah digunakan");
+                    if (duplicateExists) System.out.println("NIM sudah digunakan.");
                     else {
                         studentList.add(new Students(student, ID));
-                        System.out.println("Mahasiswa " + student + " ditambahkan");
+                        System.out.println("Mahasiswa " + student + " ditambahkan.");
                     }
                     break;
 
@@ -55,11 +55,11 @@ public class Main {
                         if (deleteID.equals(cStudent.getID())) {
                             isIDFound = true;
                             studentList.remove(cStudent);
-                            System.out.println("Mahasiswa " + cStudent.getName() + " dihapus");
+                            System.out.println("Mahasiswa " + cStudent.getName() + " dihapus.");
                             break;
                         }
                     }
-                    if (!isIDFound) System.out.println("NIM tidak ditemukan");
+                    if (!isIDFound) System.out.println("NIM tidak ditemukan.");
                     break;
 
                 case 3:
@@ -74,7 +74,7 @@ public class Main {
                             break;
                         }
                     }
-                    if (!hasIDfound) System.out.println("NIM tidak ditemukan");
+                    if (!hasIDfound) System.out.println("NIM tidak ditemukan.");
                     break;
 
                 case 4:
