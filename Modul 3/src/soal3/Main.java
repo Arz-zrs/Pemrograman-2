@@ -79,8 +79,11 @@ public class Main {
 
                 case 4:
                     System.out.println("Daftar Mahasiswa:");
-                    for (Students cStudent : studentList) {
-                        System.out.println("NIM: " + cStudent.getID() + ", Nama: " + cStudent.getName());
+                    if (studentList.isEmpty()) System.out.println("Daftar Mahasiswa Kosong.");
+                    else {
+                        for (Students cStudent : studentList) {
+                            System.out.println("NIM: " + cStudent.getID() + ", Nama: " + cStudent.getName());
+                        }
                     }
                     break;
 
