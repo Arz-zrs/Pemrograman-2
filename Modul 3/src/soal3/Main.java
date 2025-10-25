@@ -22,6 +22,7 @@ public class Main {
                 case "0":
                     studentList.clear();
                     System.out.println("Terima Kasih!");
+                    sc.close();
                     System.exit(0);
 
                 case "1":
