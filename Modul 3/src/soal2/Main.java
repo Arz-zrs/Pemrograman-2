@@ -7,7 +7,16 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         LinkedList<Country> countries = new LinkedList<>();
 
-        int limit = sc.nextInt();
+        int limit;
+        do {
+            while(!sc.hasNextInt()) {
+                System.out.println("Invalid input, try again");
+                sc.next();
+            }
+            limit = sc.nextInt();
+            if (limit < 1) System.out.println("Invalid input, try again");
+        }
+        while (limit < 1);
         sc.nextLine();
 
         for (int i = 0; i < limit; i++) {
@@ -40,7 +49,17 @@ public class Main {
                     if (month < 1 || month > 12) System.out.println("Invalid input, try again");
                 }
                 while (month < 1 || month > 12);
-                int year = sc.nextInt();
+
+                int year;
+                do {
+                    while(!sc.hasNextInt()) {
+                        System.out.println("Invalid input, try again");
+                        sc.next();
+                    }
+                    year = sc.nextInt();
+                    if (year < 1) System.out.println("Invalid input, try again");
+                }
+                while (year < 1);
                 sc.nextLine();
 
                 countries.add(new Country(countryName, government, leaderName, day, month, year));
