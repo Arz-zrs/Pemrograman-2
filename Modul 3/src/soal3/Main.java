@@ -16,16 +16,15 @@ public class Main {
             System.out.println("0. Keluar");
             System.out.print("Pilihan: ");
 
-            int choice = sc.nextInt();
-            sc.nextLine();
+            String choice = sc.nextLine();
 
             switch (choice) {
-                case 0:
+                case "0":
                     studentList.clear();
                     System.out.println("Terima Kasih!");
                     System.exit(0);
 
-                case 1:
+                case "1":
                     System.out.print("Masukkan Nama Mahasiswa: ");
                     String student = sc.nextLine();
                     System.out.print("Masukkan NIM Mahasiswa (harus unuk): ");
@@ -46,7 +45,7 @@ public class Main {
                     }
                     break;
 
-                case 2:
+                case "2":
                     System.out.print("Masukkan NIM Mahasiswa yang akan dihapus: ");
                     String deleteID = sc.nextLine();
 
@@ -62,7 +61,7 @@ public class Main {
                     if (!isIDFound) System.out.println("NIM tidak ditemukan.");
                     break;
 
-                case 3:
+                case "3":
                     System.out.print("Masukkan NIM Mahasiswa yang akan dicari: ");
                     String searchID = sc.nextLine();
 
@@ -77,7 +76,7 @@ public class Main {
                     if (!hasIDfound) System.out.println("NIM tidak ditemukan.");
                     break;
 
-                case 4:
+                case "4":
                     System.out.println("Daftar Mahasiswa:");
                     if (studentList.isEmpty()) System.out.println("Daftar Mahasiswa Kosong.");
                     else {
