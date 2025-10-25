@@ -10,8 +10,6 @@ public class Country {
     private int independenceMonth;
     private int independenceYear;
 
-
-
     public Country(String name, String governmentType, String leaderName, int independenceDay, int independenceMonth, int independenceYear) {
         this.countryName = name;
         this.governmentType = governmentType;
