@@ -3,9 +3,9 @@ package soal1;
 public class Sphere extends Shape {
     private double radius;
 
-    public Sphere(double radius) {
+    public Sphere(double r) {
         super("soal1.Sphere");
-        this.radius = radius;
+        radius = r;
     }
 
     @Override
