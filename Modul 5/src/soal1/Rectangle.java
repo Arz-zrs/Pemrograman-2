@@ -5,7 +5,7 @@ public class Rectangle extends Shape {
     private double width;
 
     public Rectangle(double l, double w) {
-        super("soal1.Rectangle");
+        super("Rectangle");
         length = l;
         width = w;
     }

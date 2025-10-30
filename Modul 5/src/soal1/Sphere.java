@@ -4,7 +4,7 @@ public class Sphere extends Shape {
     private double radius;
 
     public Sphere(double r) {
-        super("soal1.Sphere");
+        super("Sphere");
         radius = r;
     }
 

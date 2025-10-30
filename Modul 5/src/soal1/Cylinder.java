@@ -5,7 +5,7 @@ public class Cylinder extends Shape {
     private double height;
 
     public Cylinder(double r, double h) {
-        super("soal1.Cylinder");
+        super("Cylinder");
         radius = r;
         height = h;
     }
