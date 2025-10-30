@@ -1,7 +1,7 @@
 public abstract class Shape {
     protected String shapeName;
 
-    public Shape(String shapeName) {
+    protected Shape(String shapeName) {
         this.shapeName = shapeName;
     }
 
