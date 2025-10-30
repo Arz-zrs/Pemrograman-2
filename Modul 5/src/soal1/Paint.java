@@ -1,3 +1,5 @@
+package soal1;
+
 public class Paint {
     private double coverage;
 

@@ -1,3 +1,5 @@
+package soal1;
+
 import java.text.DecimalFormat;
 
 public class PaintThings {

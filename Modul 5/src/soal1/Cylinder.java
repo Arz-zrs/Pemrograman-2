@@ -1,9 +1,11 @@
+package soal1;
+
 public class Cylinder extends Shape {
     private double radius;
     private double height;
 
     public Cylinder(double radius, double height) {
-        super("Cylinder");
+        super("soal1.Cylinder");
         this.radius = radius;
         this.height = height;
     }

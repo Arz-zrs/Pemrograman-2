@@ -1,3 +1,5 @@
+package soal1;
+
 public abstract class Shape {
     protected String shapeName;
 

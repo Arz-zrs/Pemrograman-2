@@ -1,9 +1,11 @@
+package soal1;
+
 public class Rectangle extends Shape {
     private double length;
     private double width;
 
     public Rectangle(double length, double width) {
-        super("Rectangle");
+        super("soal1.Rectangle");
         this.length = length;
         this.width = width;
     }

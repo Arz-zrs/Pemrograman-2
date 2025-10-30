@@ -1,8 +1,10 @@
+package soal1;
+
 public class Sphere extends Shape {
     private double radius;
 
     public Sphere(double radius) {
-        super("Sphere");
+        super("soal1.Sphere");
         this.radius = radius;
     }
 
