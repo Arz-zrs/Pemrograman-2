@@ -2,7 +2,7 @@ public class Sphere extends Shape {
     private double radius;
 
     public Sphere(double radius) {
-        super("Shape");
+        super("Sphere");
         this.radius = radius;
     }
 
