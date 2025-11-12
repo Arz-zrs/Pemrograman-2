@@ -1,8 +1,8 @@
 package solid.data;
 
 public class Student {
-    private String name;
-    private String id;
+    private final String name;
+    private final String id;
 
     public Student(String name, String ID) {
         this.name = name;
