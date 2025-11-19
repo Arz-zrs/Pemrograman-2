@@ -11,6 +11,12 @@ public class DisplayAllDataCommand implements Command {
 
     @Override
     public void execute() {
-        data.displayAllData();
+        var students = data.displayAllData();
+        if (students.isEmpty()) {
+            System.out.println("Daftar Mahasiswa Kosong.");
+        } else {
+            System.out.println("Daftar Mahasiswa:");
+            students.forEach(s -> System.out.println("NIM: " + s.getId() + ", Nama: " + s.getName()));
+        }
     }
 }

@@ -15,7 +15,9 @@ public class SearchDataCommand implements Command {
     @Override
     public void execute() {
         String id = input.validateInput("Masukkan NIM Mahasiswa yang akan dicari: ");
-        data.findData(id);
+        data.findData(id).ifPresentOrElse(
+                s -> System.out.println("NIM: " + s.getId() + ", Nama: " + s.getName()),
+                () -> System.out.println("NIM tidak ditemukan.")
+        );
     }
-
 }

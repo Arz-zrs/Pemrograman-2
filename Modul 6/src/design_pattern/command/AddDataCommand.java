@@ -17,6 +17,8 @@ public class AddDataCommand implements Command {
     public void execute() {
         String name = input.validateInput("Masukkan Nama Mahasiswa: ");
         String id = input.validateInput("Masukkan NIM Mahasiswa: ");
-        data.insertData(name, id);
+        boolean success = data.insertData(name, id);
+        if (success) System.out.println("Mahasiswa " + name + " ditambahkan.");
+        else System.out.println("NIM sudah digunakan.");
     }
 }

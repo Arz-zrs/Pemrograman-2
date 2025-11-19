@@ -15,6 +15,8 @@ public class RemoveDataCommand implements Command {
     @Override
     public void execute() {
         String id = input.validateInput("Masukkan NIM Mahasiswa yang akan dihapus: ");
-        data.removeData(id);
+        boolean success = data.removeData(id);
+        if (success) System.out.println("Mahasiswa dengan NIM " + id + " dihapus.");
+        else System.out.println("NIM tidak ditemukan.");
     }
 }
