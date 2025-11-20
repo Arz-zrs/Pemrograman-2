@@ -9,4 +9,3 @@ public abstract class UserInterface {
 
     protected abstract void displayBody();
 }
-
