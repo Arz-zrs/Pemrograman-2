@@ -6,9 +6,10 @@ import commandpattern.data.DataManager;
 import commandpattern.io.InputManager;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class MenuHandler implements Interactable {
-    private final HashMap<String, Command> commands = new HashMap<>();
+    private final Map<String, Command> commands = new HashMap<>();
     private final InputManager input;
 
     public MenuHandler(DataManager data, InputManager input) {
