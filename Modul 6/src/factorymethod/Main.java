@@ -1,10 +1,10 @@
-package factorypattern;
+package factorymethod;
 
-import factorypattern.core.AppLogic;
-import factorypattern.core.Interactable;
-import factorypattern.core.UserInterface;
-import factorypattern.factory.AppFactory;
-import factorypattern.factory.DefaultAppFactory;
+import factorymethod.core.AppLogic;
+import factorymethod.core.Interactable;
+import factorymethod.core.UserInterface;
+import factorymethod.factory.AppFactory;
+import factorymethod.factory.DefaultAppFactory;
 
 public class Main {
     public static void main(String[] args) {

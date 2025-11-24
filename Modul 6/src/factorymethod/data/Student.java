@@ -1,4 +1,4 @@
-package factorypattern.data;
+package factorymethod.data;
 
 public class Student {
     private final String name;

@@ -1,4 +1,4 @@
-package factorypattern.core;
+package factorymethod.core;
 
 public class AppLogic {
     private final UserInterface view;

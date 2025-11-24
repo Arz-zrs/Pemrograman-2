@@ -1,8 +1,8 @@
-package factorypattern.interaction;
+package factorymethod.interaction;
 
-import factorypattern.core.Interactable;
-import factorypattern.data.DataManager;
-import factorypattern.io.InputManager;
+import factorymethod.core.Interactable;
+import factorymethod.data.DataManager;
+import factorymethod.io.InputManager;
 
 public class MenuHandler implements Interactable {
     private final DataManager data;

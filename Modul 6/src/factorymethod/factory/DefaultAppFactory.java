@@ -1,11 +1,11 @@
-package factorypattern.factory;
+package factorymethod.factory;
 
-import factorypattern.data.DataManager;
-import factorypattern.core.Interactable;
-import factorypattern.core.UserInterface;
-import factorypattern.interaction.MenuHandler;
-import factorypattern.io.InputManager;
-import factorypattern.pages.HomePage;
+import factorymethod.data.DataManager;
+import factorymethod.core.Interactable;
+import factorymethod.core.UserInterface;
+import factorymethod.interaction.MenuHandler;
+import factorymethod.io.InputManager;
+import factorymethod.pages.HomePage;
 
 import java.util.Scanner;
 

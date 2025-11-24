@@ -1,4 +1,4 @@
-package factorypattern.data;
+package factorymethod.data;
 
 import java.util.ArrayList;
 import java.util.Iterator;

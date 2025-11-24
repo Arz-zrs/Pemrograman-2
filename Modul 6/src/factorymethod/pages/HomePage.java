@@ -1,6 +1,6 @@
-package factorypattern.pages;
+package factorymethod.pages;
 
-import factorypattern.core.UserInterface;
+import factorymethod.core.UserInterface;
 
 public class HomePage extends UserInterface {
     @Override

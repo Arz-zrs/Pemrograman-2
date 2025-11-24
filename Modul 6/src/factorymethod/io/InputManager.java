@@ -1,4 +1,4 @@
-package factorypattern.io;
+package factorymethod.io;
 
 import java.util.Scanner;
 

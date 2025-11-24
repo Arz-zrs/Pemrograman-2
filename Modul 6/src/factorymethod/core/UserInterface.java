@@ -1,4 +1,4 @@
-package factorypattern.core;
+package factorymethod.core;
 
 public abstract class UserInterface {
     public void showUI() {
