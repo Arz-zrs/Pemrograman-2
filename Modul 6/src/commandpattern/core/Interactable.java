@@ -1,4 +1,4 @@
-package design_pattern.core;
+package commandpattern.core;
 
 public interface Interactable {
     boolean handleInteraction();

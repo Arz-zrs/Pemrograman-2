@@ -1,4 +1,4 @@
-package design_pattern.data;
+package commandpattern.data;
 
 public class Student {
     private final String name;

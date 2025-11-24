@@ -1,9 +1,9 @@
-package design_pattern.interaction;
+package commandpattern.interaction;
 
-import design_pattern.command.*;
-import design_pattern.core.Interactable;
-import design_pattern.data.DataManager;
-import design_pattern.io.InputManager;
+import commandpattern.command.*;
+import commandpattern.core.Interactable;
+import commandpattern.data.DataManager;
+import commandpattern.io.InputManager;
 
 import java.util.HashMap;
 

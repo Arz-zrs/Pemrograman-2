@@ -1,4 +1,4 @@
-package design_pattern.core;
+package commandpattern.core;
 
 public abstract class UserInterface {
     public void showUI() {

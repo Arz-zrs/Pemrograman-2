@@ -1,6 +1,6 @@
-package design_pattern.command;
+package commandpattern.command;
 
-import design_pattern.data.DataManager;
+import commandpattern.data.DataManager;
 
 public class DisplayAllDataCommand implements Command {
     private final DataManager data;

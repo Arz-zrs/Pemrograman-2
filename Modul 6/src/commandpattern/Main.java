@@ -1,12 +1,12 @@
-package design_pattern;
+package commandpattern;
 
-import design_pattern.core.AppLogic;
-import design_pattern.core.Interactable;
-import design_pattern.core.UserInterface;
-import design_pattern.data.DataManager;
-import design_pattern.interaction.MenuHandler;
-import design_pattern.io.InputManager;
-import design_pattern.pages.HomePage;
+import commandpattern.core.AppLogic;
+import commandpattern.core.Interactable;
+import commandpattern.core.UserInterface;
+import commandpattern.data.DataManager;
+import commandpattern.interaction.MenuHandler;
+import commandpattern.io.InputManager;
+import commandpattern.pages.HomePage;
 
 import java.util.Scanner;
 

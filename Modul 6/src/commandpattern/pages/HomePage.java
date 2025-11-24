@@ -1,6 +1,6 @@
-package design_pattern.pages;
+package commandpattern.pages;
 
-import design_pattern.core.UserInterface;
+import commandpattern.core.UserInterface;
 
 public class HomePage extends UserInterface {
     @Override

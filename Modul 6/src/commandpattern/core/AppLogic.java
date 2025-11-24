@@ -1,4 +1,4 @@
-package design_pattern.core;
+package commandpattern.core;
 
 public class AppLogic {
     private final UserInterface view;

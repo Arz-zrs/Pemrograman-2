@@ -1,7 +1,7 @@
-package design_pattern.command;
+package commandpattern.command;
 
-import design_pattern.data.DataManager;
-import design_pattern.io.InputManager;
+import commandpattern.data.DataManager;
+import commandpattern.io.InputManager;
 
 public class RemoveDataCommand implements Command {
     private final DataManager data;

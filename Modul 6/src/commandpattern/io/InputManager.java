@@ -1,4 +1,4 @@
-package design_pattern.io;
+package commandpattern.io;
 
 import java.util.Scanner;
 
