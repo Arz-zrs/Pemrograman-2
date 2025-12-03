@@ -16,7 +16,7 @@ public class Main extends Application {
         );
 
         Scene scene = new Scene(loader.load());
-        stage.setTitle("Student CRUD — SOLID JavaFX");
+        stage.setTitle("CRUD Data Mahasiswa");
         stage.setScene(scene);
         stage.show();
     }
