@@ -1,17 +1,18 @@
 package com.example.studentdata.service;
 
 import com.example.studentdata.model.Student;
+import com.example.studentdata.repository.MemoryStudentRepository;
 import com.example.studentdata.repository.StudentRepository;
 import com.example.studentdata.validation.StudentValidator;
 
 import java.util.List;
 
 public class StudentService {
-    private final StudentRepository repository;
+    private final MemoryStudentRepository repository;
     private final StudentValidator validator = new StudentValidator();
 
     public StudentService(StudentRepository repository) {
-        this.repository = repository;
+        this.repository = (MemoryStudentRepository) repository;
     }
 
     public List<Student> getAll() {
