@@ -1,5 +1,9 @@
 package com.example.studentdata.app;
 
+import com.example.studentdata.controller.StudentController;
+import com.example.studentdata.repository.MemoryStudentRepository;
+import com.example.studentdata.repository.StudentRepository;
+import com.example.studentdata.service.StudentService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,6 +20,14 @@ public class Main extends Application {
         );
 
         Scene scene = new Scene(loader.load());
+
+        StudentController controller = loader.getController();
+
+        StudentRepository repo = new MemoryStudentRepository();
+        StudentService service = new StudentService(repo);
+
+        controller.setService(service);
+
         stage.setTitle("CRUD Data Mahasiswa");
         stage.setScene(scene);
         stage.show();

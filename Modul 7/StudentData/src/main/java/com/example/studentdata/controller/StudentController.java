@@ -1,7 +1,6 @@
 package com.example.studentdata.controller;
 
 import com.example.studentdata.model.Student;
-import com.example.studentdata.repository.MemoryStudentRepository;
 import com.example.studentdata.service.StudentService;
 import com.example.studentdata.util.AlertUtils;
 import javafx.collections.FXCollections;
@@ -18,11 +17,14 @@ public class StudentController {
     @FXML private TextField txtId;
     @FXML private TextField txtName;
 
-    private final StudentService service =
-            new StudentService(new MemoryStudentRepository());
-
     private final ObservableList<Student> observableList =
             FXCollections.observableArrayList();
+
+    private StudentService service;
+    public void setService(StudentService service) {
+        this.service = service;
+        refreshTable();
+    }
 
     @FXML
     public void initialize() {
@@ -31,14 +33,12 @@ public class StudentController {
         colName.setCellValueFactory(c ->
                 new javafx.beans.property.SimpleStringProperty(c.getValue().getName()));
 
-        tableStudent.getSelectionModel().selectedItemProperty().addListener((obs, oldSel, newSel) -> {
+        tableStudent.getSelectionModel().selectedItemProperty().addListener((_, _, newSel) -> {
             if (newSel != null) {
                 txtId.setText(newSel.getId());
                 txtName.setText(newSel.getName());
             }
         });
-
-        refreshTable();
     }
 
     private void refreshTable() {
