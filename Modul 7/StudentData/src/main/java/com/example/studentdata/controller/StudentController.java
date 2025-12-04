@@ -24,10 +24,12 @@ public class StudentController {
 
     private StudentService service;
     private Feedback feedback;
+    private StudentMapper mapper;
 
-    public void setDependencies(StudentService service, Feedback feedback) {
+    public void setDependencies(StudentService service, Feedback feedback, StudentMapper mapper) {
         this.service = service;
         this.feedback = feedback;
+        this.mapper = mapper;
         refreshTable();
     }
 
@@ -38,26 +40,27 @@ public class StudentController {
 
         tableStudent.getSelectionModel().selectedItemProperty().addListener((_, _, newSel) -> {
             if (newSel != null)
-                StudentMapper.toFields(newSel, txtId, txtName);
+                mapper.toFields(newSel, txtId, txtName);
         });
     }
 
     private void refreshTable() {
+        if (service == null) return;
         observableList.setAll(service.getAll());
         tableStudent.setItems(observableList);
     }
 
     @FXML
     private void addStudent() {
-        Student form = StudentMapper.fromFields(txtId, txtName);
+        Student form = mapper.fromFields(txtId, txtName);
         OperationResult result = service.add(form.getId(), form.getName());
 
         if (result.isFailed()) {
-            feedback.error(result.getMessage());
+            feedback.error(result.message());
             return;
         }
 
-        feedback.info(result.getMessage());
+        feedback.info(result.message());
         refreshTable();
     }
 
@@ -79,11 +82,11 @@ public class StudentController {
         );
 
         if (result.isFailed()) {
-            feedback.error(result.getMessage());
+            feedback.error(result.message());
             return;
         }
 
-        feedback.info(result.getMessage());
+        feedback.info(result.message());
         refreshTable();
     }
 
@@ -101,11 +104,11 @@ public class StudentController {
         OperationResult result = service.delete(selected.getId());
 
         if (result.isFailed()) {
-            feedback.error(result.getMessage());
+            feedback.error(result.message());
             return;
         }
 
-        feedback.info(result.getMessage());
+        feedback.info(result.message());
         refreshTable();
     }
 }

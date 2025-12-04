@@ -1,12 +1,14 @@
 package com.example.studentdata.app;
 
 import com.example.studentdata.controller.StudentController;
+import com.example.studentdata.mapper.StudentMapper;
 import com.example.studentdata.repository.MemoryStudentRepository;
 import com.example.studentdata.repository.StudentRepository;
 import com.example.studentdata.service.StudentService;
 import com.example.studentdata.ui.Feedback;
 import com.example.studentdata.ui.FeedbackMessage;
 import com.example.studentdata.validation.StudentValidator;
+import com.example.studentdata.validation.StudentValidatorLogic;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -26,12 +28,13 @@ public class Main extends Application {
         StudentController controller = loader.getController();
 
         StudentRepository repo = new MemoryStudentRepository();
-        StudentValidator validator = new StudentValidator();
+        StudentValidator validator = new StudentValidatorLogic();
+        StudentMapper mapper = new StudentMapper();
         StudentService service = new StudentService(repo, validator);
-
         Feedback feedback = new FeedbackMessage();
 
-        controller.setDependencies(service, feedback);
+
+        controller.setDependencies(service, feedback, mapper);
 
         stage.setScene(scene);
         stage.show();
