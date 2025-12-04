@@ -37,6 +37,7 @@ public class Main extends Application {
         controller.setDependencies(service, feedback, mapper);
 
         stage.setScene(scene);
+        stage.setTitle("CRUD Data Mahasiswa");
         stage.show();
     }
 }
