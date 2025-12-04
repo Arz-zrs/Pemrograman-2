@@ -11,7 +11,7 @@
                prefWidth="560" prefHeight="250">
         <columns>
             <TableColumn fx:id="colId" text="NIM" prefWidth="200"/>
-            <TableColumn fx:id="colName" text="Nama" prefWidth="300"/>
+            <TableColumn fx:id="colName" text="Nama" prefWidth="358"/>
         </columns>
     </TableView>
 
