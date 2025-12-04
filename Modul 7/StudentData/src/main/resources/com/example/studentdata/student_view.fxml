@@ -15,10 +15,10 @@
         </columns>
     </TableView>
 
-    <Label layoutX="20" layoutY="290" text="ID:"/>
+    <Label layoutX="20" layoutY="290" text="NIM:"/>
     <TextField fx:id="txtId" layoutX="80" layoutY="285" prefWidth="150"/>
 
-    <Label layoutX="250" layoutY="290" text="Name:"/>
+    <Label layoutX="250" layoutY="290" text="Nama:"/>
     <TextField fx:id="txtName" layoutX="320" layoutY="285" prefWidth="150"/>
 
     <Button text="Add" layoutX="20" layoutY="330" onAction="#addStudent"/>
