@@ -10,8 +10,8 @@
     <TableView fx:id="tableStudent" layoutX="20" layoutY="20"
                prefWidth="560" prefHeight="250">
         <columns>
-            <TableColumn fx:id="colId" text="ID" prefWidth="200"/>
-            <TableColumn fx:id="colName" text="Name" prefWidth="300"/>
+            <TableColumn fx:id="colId" text="NIM" prefWidth="200"/>
+            <TableColumn fx:id="colName" text="Nama" prefWidth="300"/>
         </columns>
     </TableView>
 
