@@ -30,7 +30,7 @@ public class StudentService {
             return OperationResult.fail("NIM sudah digunakan.");
 
         repository.save(new Student(id, name));
-        return OperationResult.ok("Mahasiswa berhasil ditambahkan.");
+        return OperationResult.success("Mahasiswa berhasil ditambahkan.");
     }
 
     public OperationResult update(String oldId, String newId, String newName) {
@@ -45,13 +45,13 @@ public class StudentService {
             return OperationResult.fail("NIM baru sudah digunakan.");
 
         repository.update(oldId, newId, newName);
-        return OperationResult.ok("Data mahasiswa berhasil diperbarui.");
+        return OperationResult.success("Data mahasiswa berhasil diperbarui.");
     }
 
     public OperationResult delete(String id) {
         if (!repository.delete(id))
             return OperationResult.fail("Data tidak ditemukan.");
 
-        return OperationResult.ok("Data mahasiswa berhasil dihapus.");
+        return OperationResult.success("Data mahasiswa berhasil dihapus.");
     }
 }

@@ -2,7 +2,7 @@ package com.example.studentdata.util;
 
 public record OperationResult(boolean success, String message) {
 
-    public static OperationResult ok(String msg) {
+    public static OperationResult success(String msg) {
         return new OperationResult(true, msg);
     }
 
