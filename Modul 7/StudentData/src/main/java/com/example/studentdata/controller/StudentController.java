@@ -43,12 +43,12 @@ public class StudentController {
 
     @FXML
     private void addStudent() {
-        OperationResult r = viewModel.add();
-        if (r.isFailed()) {
-            feedback.error(r.message());
+        OperationResult res = viewModel.add();
+        if (res.isFailed()) {
+            feedback.error(res.message());
             return;
         }
-        feedback.info(r.message());
+        feedback.info(res.message());
         viewModel.loadAll();
         viewModel.clearForm();
     }
@@ -65,12 +65,12 @@ public class StudentController {
             return;
         }
 
-        OperationResult r = viewModel.update(selected.getId());
-        if (r.isFailed()) {
-            feedback.error(r.message());
+        OperationResult res = viewModel.update(selected.getId());
+        if (res.isFailed()) {
+            feedback.error(res.message());
             return;
         }
-        feedback.info(r.message());
+        feedback.info(res.message());
         viewModel.loadAll();
         viewModel.clearForm();
     }
@@ -87,12 +87,12 @@ public class StudentController {
             return;
         }
 
-        OperationResult r = viewModel.delete(selected.getId());
-        if (r.isFailed()) {
-            feedback.error(r.message());
+        OperationResult res = viewModel.delete(selected.getId());
+        if (res.isFailed()) {
+            feedback.error(res.message());
             return;
         }
-        feedback.info(r.message());
+        feedback.info(res.message());
         viewModel.loadAll();
         viewModel.clearForm();
     }
