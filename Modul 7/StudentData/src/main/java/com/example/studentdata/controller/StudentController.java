@@ -37,8 +37,8 @@ public class StudentController {
 
     @FXML
     public void initialize() {
-        colId.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getId()));
-        colName.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getName()));
+        colId.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().id()));
+        colName.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().name()));
     }
 
     @FXML
@@ -65,7 +65,7 @@ public class StudentController {
             return;
         }
 
-        OperationResult res = viewModel.update(selected.getId());
+        OperationResult res = viewModel.update(selected.id());
         if (res.isFailed()) {
             feedback.error(res.message());
             return;
@@ -87,7 +87,7 @@ public class StudentController {
             return;
         }
 
-        OperationResult res = viewModel.delete(selected.getId());
+        OperationResult res = viewModel.delete(selected.id());
         if (res.isFailed()) {
             feedback.error(res.message());
             return;

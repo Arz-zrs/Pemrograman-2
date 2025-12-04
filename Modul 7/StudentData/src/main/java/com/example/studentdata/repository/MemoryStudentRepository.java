@@ -21,10 +21,11 @@ public class MemoryStudentRepository implements StudentRepository {
 
     @Override
     public void update(String oldId, String newId, String newName) {
-        for (StudentDTO s : studentDTOS) {
-            if (s.getId().equals(oldId)) {
-                s.setId(newId);
-                s.setName(newName);
+        for (int i = 0; i < studentDTOS.size(); i++) {
+            StudentDTO s = studentDTOS.get(i);
+            if (s.id().equals(oldId)) {
+                StudentDTO newVersion = new StudentDTO(newId, newName);
+                studentDTOS.set(i, newVersion);
                 return;
             }
         }
@@ -32,11 +33,11 @@ public class MemoryStudentRepository implements StudentRepository {
 
     @Override
     public boolean delete(String id) {
-        return studentDTOS.removeIf(s -> s.getId().equals(id));
+        return studentDTOS.removeIf(s -> s.id().equals(id));
     }
 
     @Override
     public boolean exists(String id) {
-        return studentDTOS.stream().anyMatch(s -> s.getId().equals(id));
+        return studentDTOS.stream().anyMatch(s -> s.id().equals(id));
     }
 }

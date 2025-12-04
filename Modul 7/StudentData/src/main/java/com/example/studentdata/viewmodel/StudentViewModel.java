@@ -50,8 +50,8 @@ public class StudentViewModel {
             id.set("");
             name.set("");
         } else {
-            id.set(s.getId());
-            name.set(s.getName());
+            id.set(s.id());
+            name.set(s.name());
         }
     }
 
