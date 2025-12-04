@@ -9,7 +9,7 @@ public class StudentValidator {
         return name != null && !name.isBlank();
     }
 
-    public boolean isValidInput(String id, String name) {
+    public boolean hasInvalidInput(String id, String name) {
         return !isValidId(id) || !isValidName(name);
     }
 }

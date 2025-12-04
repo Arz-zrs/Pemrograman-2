@@ -20,7 +20,7 @@ public class StudentService {
     }
 
     public boolean addStudent(String id, String name) {
-        if (validator.isValidInput(id, name)) return false;
+        if (validator.hasInvalidInput(id, name)) return false;
 
         boolean duplicate = repository.getAll().stream()
                 .anyMatch(s -> s.getId().equals(id));
@@ -31,7 +31,7 @@ public class StudentService {
     }
 
     public boolean updateStudent(String oldId, String newId, String name) {
-        if (validator.isValidInput(newId, name)) return false;
+        if (validator.hasInvalidInput(newId, name)) return false;
 
         boolean duplicate = repository.getAll().stream()
                 .anyMatch(s -> s.getId().equals(newId) && !s.getId().equals(oldId));
