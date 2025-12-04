@@ -42,7 +42,7 @@ public class StudentService {
             return OperationResult.fail("Data tidak ditemukan.");
 
         if (!oldId.equals(newId) && repository.exists(newId))
-            return OperationResult.fail("NIM baru sudah digunakan.");
+            return OperationResult.fail("NIM sudah digunakan.");
 
         repository.update(oldId, newId, newName);
         return OperationResult.success("Data mahasiswa berhasil diperbarui.");
