@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface StudentRepository {
     List<Student> getAll();
-    boolean add(Student student);
-    boolean update(String oldId, Student newStudent);
+    void save(Student student);
+    void update(String oldId, String newId, String newName);
     boolean delete(String id);
+    boolean exists(String id);
 }

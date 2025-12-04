@@ -4,6 +4,9 @@ import com.example.studentdata.controller.StudentController;
 import com.example.studentdata.repository.MemoryStudentRepository;
 import com.example.studentdata.repository.StudentRepository;
 import com.example.studentdata.service.StudentService;
+import com.example.studentdata.ui.Feedback;
+import com.example.studentdata.ui.FeedbackMessage;
+import com.example.studentdata.validation.StudentValidator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,17 +21,18 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/com/example/studentdata/student_view.fxml")
         );
-
         Scene scene = new Scene(loader.load());
 
         StudentController controller = loader.getController();
 
         StudentRepository repo = new MemoryStudentRepository();
-        StudentService service = new StudentService(repo);
+        StudentValidator validator = new StudentValidator();
+        StudentService service = new StudentService(repo, validator);
 
-        controller.setService(service);
+        Feedback feedback = new FeedbackMessage();
 
-        stage.setTitle("CRUD Data Mahasiswa");
+        controller.setDependencies(service, feedback);
+
         stage.setScene(scene);
         stage.show();
     }

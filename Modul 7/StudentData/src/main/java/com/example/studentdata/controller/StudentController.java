@@ -1,8 +1,10 @@
 package com.example.studentdata.controller;
 
+import com.example.studentdata.mapper.StudentMapper;
 import com.example.studentdata.model.Student;
 import com.example.studentdata.service.StudentService;
-import com.example.studentdata.util.AlertUtils;
+import com.example.studentdata.ui.Feedback;
+import com.example.studentdata.util.OperationResult;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,23 +23,22 @@ public class StudentController {
             FXCollections.observableArrayList();
 
     private StudentService service;
-    public void setService(StudentService service) {
+    private Feedback feedback;
+
+    public void setDependencies(StudentService service, Feedback feedback) {
         this.service = service;
+        this.feedback = feedback;
         refreshTable();
     }
 
     @FXML
     public void initialize() {
-        colId.setCellValueFactory(c ->
-                new javafx.beans.property.SimpleStringProperty(c.getValue().getId()));
-        colName.setCellValueFactory(c ->
-                new javafx.beans.property.SimpleStringProperty(c.getValue().getName()));
+        colId.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty(c.getValue().getId()));
+        colName.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty(c.getValue().getName()));
 
         tableStudent.getSelectionModel().selectedItemProperty().addListener((_, _, newSel) -> {
-            if (newSel != null) {
-                txtId.setText(newSel.getId());
-                txtName.setText(newSel.getName());
-            }
+            if (newSel != null)
+                StudentMapper.toFields(newSel, txtId, txtName);
         });
     }
 
@@ -48,20 +49,15 @@ public class StudentController {
 
     @FXML
     private void addStudent() {
-        String id = txtId.getText();
-        String name = txtName.getText();
+        Student form = StudentMapper.fromFields(txtId, txtName);
+        OperationResult result = service.add(form.getId(), form.getName());
 
-        if (id.isBlank() || name.isBlank()) {
-            AlertUtils.error("NIM dan Nama tidak boleh kosong!");
+        if (result.isFailed()) {
+            feedback.error(result.getMessage());
             return;
         }
 
-        if (!service.addStudent(id, name)) {
-            AlertUtils.error("NIM sudah digunakan atau input tidak valid.");
-            return;
-        }
-
-        AlertUtils.info("Mahasiswa berhasil ditambahkan.");
+        feedback.info(result.getMessage());
         refreshTable();
     }
 
@@ -69,26 +65,25 @@ public class StudentController {
     private void updateStudent() {
         Student selected = tableStudent.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            AlertUtils.warning("Pilih data mahasiswa dulu.");
+            feedback.warning("Pilih data mahasiswa dulu.");
             return;
         }
 
-        boolean confirm = AlertUtils.confirm("Konfirmasi Update",
-                "Perbarui data mahasiswa?");
-        if (!confirm) return;
+        if (feedback.isCancelled("Konfirmasi Update", "Perbarui data mahasiswa?"))
+            return;
 
-        boolean success = service.updateStudent(
+        OperationResult result = service.update(
                 selected.getId(),
                 txtId.getText(),
                 txtName.getText()
         );
 
-        if (!success) {
-            AlertUtils.error("Update gagal: input tidak valid atau NIM duplikat.");
+        if (result.isFailed()) {
+            feedback.error(result.getMessage());
             return;
         }
 
-        AlertUtils.info("Data mahasiswa berhasil diperbarui.");
+        feedback.info(result.getMessage());
         refreshTable();
     }
 
@@ -96,20 +91,21 @@ public class StudentController {
     private void deleteStudent() {
         Student selected = tableStudent.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            AlertUtils.warning("Pilih data mahasiswa dulu.");
+            feedback.warning("Pilih data dulu.");
             return;
         }
 
-        boolean confirm = AlertUtils.confirm("Konfirmasi Hapus",
-                "Yakin ingin menghapus mahasiswa ini?");
-        if (!confirm) return;
+        if (feedback.isCancelled("Konfirmasi Hapus", "Yakin ingin menghapus mahasiswa ini?"))
+            return;
 
-        if (!service.deleteStudent(selected.getId())) {
-            AlertUtils.error("Gagal menghapus: data tidak ditemukan.");
+        OperationResult result = service.delete(selected.getId());
+
+        if (result.isFailed()) {
+            feedback.error(result.getMessage());
             return;
         }
 
-        AlertUtils.info("Mahasiswa berhasil dihapus.");
+        feedback.info(result.getMessage());
         refreshTable();
     }
 }

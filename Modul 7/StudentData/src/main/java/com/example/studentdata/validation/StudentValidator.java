@@ -1,15 +1,11 @@
 package com.example.studentdata.validation;
 
 public class StudentValidator {
-    public boolean isValidId(String id) {
-        return id != null && !id.isBlank();
-    }
-
-    public boolean isValidName(String name) {
-        return name != null && !name.isBlank();
-    }
-
-    public boolean hasInvalidInput(String id, String name) {
-        return !isValidId(id) || !isValidName(name);
+    public String validate(String id, String name) {
+        if (id == null || id.isBlank())
+            return "NIM tidak boleh kosong!";
+        if (name == null || name.isBlank())
+            return "Nama tidak boleh kosong!";
+        return null;
     }
 }
