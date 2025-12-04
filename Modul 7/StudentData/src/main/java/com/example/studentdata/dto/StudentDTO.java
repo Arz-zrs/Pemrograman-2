@@ -1,10 +1,10 @@
-package com.example.studentdata.model;
+package com.example.studentdata.dto;
 
-public class Student {
+public final class StudentDTO {
     private String id;
     private String name;
 
-    public Student(String id, String name) {
+    public StudentDTO(String id, String name) {
         this.id = id;
         this.name = name;
     }

@@ -1,14 +1,15 @@
 package com.example.studentdata.app;
 
 import com.example.studentdata.controller.StudentController;
-import com.example.studentdata.mapper.StudentMapper;
 import com.example.studentdata.repository.MemoryStudentRepository;
 import com.example.studentdata.repository.StudentRepository;
+import com.example.studentdata.service.IStudentService;
 import com.example.studentdata.service.StudentService;
 import com.example.studentdata.ui.Feedback;
 import com.example.studentdata.ui.FeedbackMessage;
 import com.example.studentdata.validation.StudentValidator;
 import com.example.studentdata.validation.StudentValidatorLogic;
+import com.example.studentdata.viewmodel.StudentViewModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -29,12 +30,13 @@ public class Main extends Application {
 
         StudentRepository repo = new MemoryStudentRepository();
         StudentValidator validator = new StudentValidatorLogic();
-        StudentMapper mapper = new StudentMapper();
-        StudentService service = new StudentService(repo, validator);
+        IStudentService service = new StudentService(repo, validator);
+
+        StudentViewModel viewModel = new StudentViewModel(service);
         Feedback feedback = new FeedbackMessage();
 
 
-        controller.setDependencies(service, feedback, mapper);
+        controller.setDependencies(viewModel, feedback);
 
         stage.setScene(scene);
         stage.setTitle("CRUD Data Mahasiswa");

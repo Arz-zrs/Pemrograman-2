@@ -1,13 +1,13 @@
 package com.example.studentdata.service;
 
-import com.example.studentdata.model.Student;
+import com.example.studentdata.dto.StudentDTO;
 import com.example.studentdata.repository.StudentRepository;
 import com.example.studentdata.util.OperationResult;
 import com.example.studentdata.validation.StudentValidator;
 
 import java.util.List;
 
-public class StudentService {
+public class StudentService implements IStudentService {
 
     private final StudentRepository repository;
     private final StudentValidator validator;
@@ -17,10 +17,12 @@ public class StudentService {
         this.validator = validator;
     }
 
-    public List<Student> getAll() {
+    @Override
+    public List<StudentDTO> getAll() {
         return repository.getAll();
     }
 
+    @Override
     public OperationResult add(String id, String name) {
         String error = validator.validate(id, name);
         if (error != null)
@@ -29,10 +31,11 @@ public class StudentService {
         if (repository.exists(id))
             return OperationResult.fail("NIM sudah digunakan.");
 
-        repository.save(new Student(id, name));
+        repository.save(new StudentDTO(id, name));
         return OperationResult.success("Mahasiswa berhasil ditambahkan.");
     }
 
+    @Override
     public OperationResult update(String oldId, String newId, String newName) {
         String error = validator.validate(newId, newName);
         if (error != null)
@@ -48,6 +51,7 @@ public class StudentService {
         return OperationResult.success("Data mahasiswa berhasil diperbarui.");
     }
 
+    @Override
     public OperationResult delete(String id) {
         if (!repository.delete(id))
             return OperationResult.fail("Data tidak ditemukan.");
