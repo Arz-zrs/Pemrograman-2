@@ -96,4 +96,9 @@ public class StudentController {
         viewModel.loadAll();
         viewModel.clearForm();
     }
+
+    @FXML
+    public void exitProgram() {
+    System.exit(0);
+    }
 }
