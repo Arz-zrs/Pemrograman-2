@@ -1,6 +1,6 @@
 package com.example.studentdata.repository;
 
-import com.example.studentdata.dto.StudentDTO;
+import com.example.studentdata.model.StudentDTO;
 
 import java.util.List;
 

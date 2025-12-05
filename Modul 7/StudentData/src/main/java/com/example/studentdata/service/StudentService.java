@@ -1,6 +1,6 @@
 package com.example.studentdata.service;
 
-import com.example.studentdata.dto.StudentDTO;
+import com.example.studentdata.model.StudentDTO;
 import com.example.studentdata.repository.StudentRepository;
 import com.example.studentdata.util.OperationResult;
 import com.example.studentdata.validation.StudentValidator;

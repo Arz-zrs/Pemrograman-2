@@ -1,6 +1,6 @@
 package com.example.studentdata.viewmodel;
 
-import com.example.studentdata.dto.StudentDTO;
+import com.example.studentdata.model.StudentDTO;
 import com.example.studentdata.service.IStudentService;
 import com.example.studentdata.util.OperationResult;
 import javafx.beans.property.SimpleStringProperty;

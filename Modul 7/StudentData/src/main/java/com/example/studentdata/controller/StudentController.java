@@ -1,6 +1,6 @@
 package com.example.studentdata.controller;
 
-import com.example.studentdata.dto.StudentDTO;
+import com.example.studentdata.model.StudentDTO;
 import com.example.studentdata.ui.Feedback;
 import com.example.studentdata.util.OperationResult;
 import com.example.studentdata.viewmodel.StudentViewModel;
