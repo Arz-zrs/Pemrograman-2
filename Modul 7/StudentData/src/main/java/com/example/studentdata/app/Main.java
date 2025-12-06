@@ -1,8 +1,8 @@
 package com.example.studentdata.app;
 
 import com.example.studentdata.controller.StudentController;
-import com.example.studentdata.process.AppLogic;
-import com.example.studentdata.process.IAppLogic;
+import com.example.studentdata.process.AppManager;
+import com.example.studentdata.process.IAppManager;
 import com.example.studentdata.repository.MemoryStudentRepository;
 import com.example.studentdata.repository.StudentRepository;
 import com.example.studentdata.service.IStudentService;
@@ -33,7 +33,7 @@ public class Main extends Application {
         StudentRepository repo = new MemoryStudentRepository();
         StudentValidator validator = new StudentValidatorLogic();
         IStudentService service = new StudentService(repo, validator);
-        IAppLogic app = new AppLogic();
+        IAppManager app = new AppManager();
 
         StudentViewModel viewModel = new StudentViewModel(service);
         Feedback feedback = new FeedbackMessage();

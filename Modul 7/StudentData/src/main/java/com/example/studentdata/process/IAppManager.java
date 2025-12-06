@@ -1,5 +1,5 @@
 package com.example.studentdata.process;
 
-public interface IAppLogic {
+public interface IAppManager {
     void close();
 }

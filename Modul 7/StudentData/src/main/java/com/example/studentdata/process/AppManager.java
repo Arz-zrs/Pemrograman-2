@@ -2,7 +2,7 @@ package com.example.studentdata.process;
 
 import javafx.application.Platform;
 
-public class AppLogic implements IAppLogic {
+public class AppManager implements IAppManager {
     @Override
     public void close() {
         Platform.exit();

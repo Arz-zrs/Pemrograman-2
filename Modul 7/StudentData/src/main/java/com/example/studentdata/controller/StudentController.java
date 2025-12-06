@@ -1,7 +1,7 @@
 package com.example.studentdata.controller;
 
 import com.example.studentdata.model.StudentDTO;
-import com.example.studentdata.process.IAppLogic;
+import com.example.studentdata.process.IAppManager;
 import com.example.studentdata.ui.Feedback;
 import com.example.studentdata.util.OperationResult;
 import com.example.studentdata.viewmodel.StudentViewModel;
@@ -20,9 +20,9 @@ public class StudentController {
 
     private StudentViewModel viewModel;
     private Feedback feedback;
-    private IAppLogic app;
+    private IAppManager app;
 
-    public void setDependencies(StudentViewModel viewModel, Feedback feedback, IAppLogic app) {
+    public void setDependencies(StudentViewModel viewModel, Feedback feedback, IAppManager app) {
         this.viewModel = viewModel;
         this.feedback = feedback;
         this.app = app;
