@@ -28,8 +28,8 @@ public class StudentController {
         this.app = app;
 
         tableStudent.setItems(viewModel.getStudents());
-        txtId.textProperty().bindBidirectional(viewModel.id);
-        txtName.textProperty().bindBidirectional(viewModel.name);
+        txtId.textProperty().bindBidirectional(viewModel.idProperty());
+        txtName.textProperty().bindBidirectional(viewModel.nameProperty());
 
         tableStudent.getSelectionModel().selectedItemProperty()
                 .addListener((_, _, newSel)

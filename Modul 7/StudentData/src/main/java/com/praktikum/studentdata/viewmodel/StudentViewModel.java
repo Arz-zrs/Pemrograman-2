@@ -14,8 +14,8 @@ public class StudentViewModel {
 
     private final IStudentService service;
 
-    public final StringProperty id = new SimpleStringProperty("");
-    public final StringProperty name = new SimpleStringProperty("");
+    private final StringProperty id = new SimpleStringProperty("");
+    private final StringProperty name = new SimpleStringProperty("");
 
     private final ObservableList<StudentDTO> studentDTOS = FXCollections.observableArrayList();
 
@@ -57,5 +57,13 @@ public class StudentViewModel {
     public void clearForm() {
         id.set("");
         name.set("");
+    }
+
+    public StringProperty idProperty() {
+        return id;
+    }
+
+    public StringProperty nameProperty() {
+        return name;
     }
 }
