@@ -1,4 +1,4 @@
-package com.praktikum.studentdata.process;
+package com.praktikum.studentdata.manager;
 
 import javafx.application.Platform;
 

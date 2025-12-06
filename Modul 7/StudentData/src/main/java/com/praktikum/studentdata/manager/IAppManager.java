@@ -1,4 +1,4 @@
-package com.praktikum.studentdata.process;
+package com.praktikum.studentdata.manager;
 
 public interface IAppManager {
     void close();

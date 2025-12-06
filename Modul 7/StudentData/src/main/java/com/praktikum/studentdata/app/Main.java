@@ -1,8 +1,8 @@
 package com.praktikum.studentdata.app;
 
 import com.praktikum.studentdata.controller.StudentController;
-import com.praktikum.studentdata.process.AppManager;
-import com.praktikum.studentdata.process.IAppManager;
+import com.praktikum.studentdata.manager.AppManager;
+import com.praktikum.studentdata.manager.IAppManager;
 import com.praktikum.studentdata.repository.MemoryStudentRepository;
 import com.praktikum.studentdata.repository.StudentRepository;
 import com.praktikum.studentdata.service.IStudentService;

@@ -1,7 +1,7 @@
 package com.praktikum.studentdata.controller;
 
 import com.praktikum.studentdata.model.StudentDTO;
-import com.praktikum.studentdata.process.IAppManager;
+import com.praktikum.studentdata.manager.IAppManager;
 import com.praktikum.studentdata.ui.Feedback;
 import com.praktikum.studentdata.util.OperationResult;
 import com.praktikum.studentdata.viewmodel.StudentViewModel;
