@@ -31,7 +31,7 @@ public class StudentService implements IStudentService {
         if (repository.exists(id))
             return OperationResult.fail("NIM sudah digunakan.");
 
-        repository.save(new StudentDTO(id, name));
+        repository.add(new StudentDTO(id, name));
         return OperationResult.success("Mahasiswa berhasil ditambahkan.");
     }
 

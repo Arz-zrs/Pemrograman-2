@@ -15,7 +15,7 @@ public class MemoryStudentRepository implements StudentRepository {
     }
 
     @Override
-    public void save(StudentDTO studentDTO) {
+    public void add(StudentDTO studentDTO) {
         studentDTOS.add(studentDTO);
     }
 
