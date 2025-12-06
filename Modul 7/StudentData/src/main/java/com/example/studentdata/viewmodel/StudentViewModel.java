@@ -21,7 +21,6 @@ public class StudentViewModel {
 
     public StudentViewModel(IStudentService service) {
         this.service = service;
-        loadAll();
     }
 
     public ObservableList<StudentDTO> getStudents() {
