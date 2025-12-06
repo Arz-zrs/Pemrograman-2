@@ -1,6 +1,7 @@
 package com.example.studentdata.controller;
 
 import com.example.studentdata.model.StudentDTO;
+import com.example.studentdata.process.IAppLogic;
 import com.example.studentdata.ui.Feedback;
 import com.example.studentdata.util.OperationResult;
 import com.example.studentdata.viewmodel.StudentViewModel;
@@ -19,10 +20,12 @@ public class StudentController {
 
     private StudentViewModel viewModel;
     private Feedback feedback;
+    private IAppLogic app;
 
-    public void setDependencies(StudentViewModel viewModel, Feedback feedback) {
+    public void setDependencies(StudentViewModel viewModel, Feedback feedback, IAppLogic app) {
         this.viewModel = viewModel;
         this.feedback = feedback;
+        this.app = app;
 
         tableStudent.setItems(viewModel.getStudents());
         txtId.textProperty().bindBidirectional(viewModel.id);
@@ -99,6 +102,6 @@ public class StudentController {
 
     @FXML
     public void exitProgram() {
-    System.exit(0);
+        app.close();
     }
 }
