@@ -2,12 +2,12 @@ package com.praktikum.studentdata.repository;
 
 import com.praktikum.studentdata.model.StudentDTO;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MemoryStudentRepository implements StudentRepository {
 
-    private final List<StudentDTO> studentDTOS = new ArrayList<>();
+    private final List<StudentDTO> studentDTOS = new LinkedList<>();
 
     @Override
     public List<StudentDTO> getAll() {
