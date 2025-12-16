@@ -1,6 +1,6 @@
 package com.praktikum.studentdata.service;
 
-import com.praktikum.studentdata.model.StudentDTO;
+import com.praktikum.studentdata.model.StudentData;
 import com.praktikum.studentdata.repository.StudentRepository;
 import com.praktikum.studentdata.util.OperationResult;
 import com.praktikum.studentdata.validation.StudentValidator;
@@ -18,7 +18,7 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public List<StudentDTO> getAll() {
+    public List<StudentData> getAll() {
         return repository.getAll();
     }
 
@@ -31,7 +31,7 @@ public class StudentService implements IStudentService {
         if (repository.exists(id))
             return OperationResult.fail("NIM sudah digunakan.");
 
-        repository.add(new StudentDTO(id, name));
+        repository.add(new StudentData(id, name));
         return OperationResult.success("Mahasiswa berhasil ditambahkan.");
     }
 

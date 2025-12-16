@@ -1,6 +1,6 @@
 package com.praktikum.studentdata.viewmodel;
 
-import com.praktikum.studentdata.model.StudentDTO;
+import com.praktikum.studentdata.model.StudentData;
 import com.praktikum.studentdata.service.IStudentService;
 import com.praktikum.studentdata.util.OperationResult;
 import javafx.beans.property.SimpleStringProperty;
@@ -17,19 +17,19 @@ public class StudentViewModel {
     private final StringProperty id = new SimpleStringProperty("");
     private final StringProperty name = new SimpleStringProperty("");
 
-    private final ObservableList<StudentDTO> studentDTOS = FXCollections.observableArrayList();
+    private final ObservableList<StudentData> studentData = FXCollections.observableArrayList();
 
     public StudentViewModel(IStudentService service) {
         this.service = service;
     }
 
-    public ObservableList<StudentDTO> getStudents() {
-        return studentDTOS;
+    public ObservableList<StudentData> getStudents() {
+        return studentData;
     }
 
     public void loadAll() {
-        List<StudentDTO> list = service.getAll();
-        studentDTOS.setAll(list);
+        List<StudentData> list = service.getAll();
+        studentData.setAll(list);
     }
 
     public OperationResult add() {
@@ -44,13 +44,13 @@ public class StudentViewModel {
         return service.delete(idToDelete);
     }
 
-    public void setFromModel(StudentDTO s) {
+    public void setFromModel(StudentData s) {
         if (s == null) {
             id.set("");
             name.set("");
         } else {
-            id.set(s.id());
-            name.set(s.name());
+            id.set(s.getId());
+            name.set(s.getName());
         }
     }
 

@@ -1,31 +1,31 @@
 package com.praktikum.studentdata.repository;
 
-import com.praktikum.studentdata.model.StudentDTO;
+import com.praktikum.studentdata.model.StudentData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MemoryStudentRepository implements StudentRepository {
 
-    private final List<StudentDTO> studentDTOS = new ArrayList<>();
+    private final List<StudentData> studentData = new ArrayList<>();
 
     @Override
-    public List<StudentDTO> getAll() {
-        return List.copyOf(studentDTOS);
+    public List<StudentData> getAll() {
+        return List.copyOf(studentData);
     }
 
     @Override
-    public void add(StudentDTO studentDTO) {
-        studentDTOS.add(studentDTO);
+    public void add(StudentData studentData) {
+        this.studentData.add(studentData);
     }
 
     @Override
     public void update(String oldId, String newId, String newName) {
-        for (int i = 0; i < studentDTOS.size(); i++) {
-            StudentDTO s = studentDTOS.get(i);
-            if (s.id().equals(oldId)) {
-                StudentDTO newVersion = new StudentDTO(newId, newName);
-                studentDTOS.set(i, newVersion);
+        for (int i = 0; i < studentData.size(); i++) {
+            StudentData s = studentData.get(i);
+            if (s.getId().equals(oldId)) {
+                StudentData newVersion = new StudentData(newId, newName);
+                studentData.set(i, newVersion);
                 return;
             }
         }
@@ -33,11 +33,11 @@ public class MemoryStudentRepository implements StudentRepository {
 
     @Override
     public boolean delete(String id) {
-        return studentDTOS.removeIf(s -> s.id().equals(id));
+        return studentData.removeIf(s -> s.getId().equals(id));
     }
 
     @Override
     public boolean exists(String id) {
-        return studentDTOS.stream().anyMatch(s -> s.id().equals(id));
+        return studentData.stream().anyMatch(s -> s.getId().equals(id));
     }
 }
