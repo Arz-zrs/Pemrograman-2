@@ -3,7 +3,7 @@ package com.praktikum.studentdata.util;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
-public class AlertUtils {
+public final class AlertUtils {
 
     public static void info(String msg) {
         alert(Alert.AlertType.INFORMATION, "Info", msg);
