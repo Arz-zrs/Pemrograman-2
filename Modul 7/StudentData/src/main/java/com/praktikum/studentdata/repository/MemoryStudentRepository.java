@@ -15,8 +15,8 @@ public class MemoryStudentRepository implements StudentRepository {
     }
 
     @Override
-    public void add(StudentData studentData) {
-        this.studentData.add(studentData);
+    public void add(StudentData data) {
+        studentData.add(data);
     }
 
     @Override
