@@ -11,7 +11,6 @@ public final class AlertUtils {
         alert.setHeaderText(null);
         alert.setContentText(msg);
         alert.showAndWait();
-
     }
 
     public static void error(String msg) {
@@ -20,7 +19,6 @@ public final class AlertUtils {
         alert.setHeaderText(null);
         alert.setContentText(msg);
         alert.showAndWait();
-
     }
 
     public static void warning(String msg) {
@@ -29,7 +27,6 @@ public final class AlertUtils {
         alert.setHeaderText(null);
         alert.setContentText(msg);
         alert.showAndWait();
-
     }
 
     public static boolean confirm(String title, String msg) {
