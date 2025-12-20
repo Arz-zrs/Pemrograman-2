@@ -24,8 +24,8 @@ public class MemoryStudentRepository implements StudentRepository {
         for (int i = 0; i < studentData.size(); i++) {
             StudentData s = studentData.get(i);
             if (s.getId().equals(oldId)) {
-                StudentData newVersion = new StudentData(newId, newName);
-                studentData.set(i, newVersion);
+                StudentData newStudentData = new StudentData(newId, newName);
+                studentData.set(i, newStudentData);
                 return;
             }
         }
