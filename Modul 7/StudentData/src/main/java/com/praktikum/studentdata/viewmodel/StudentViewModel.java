@@ -46,8 +46,7 @@ public class StudentViewModel {
 
     public void setFromModel(StudentData s) {
         if (s == null) {
-            id.set("");
-            name.set("");
+            clearForm();
         } else {
             id.set(s.getId());
             name.set(s.getName());
